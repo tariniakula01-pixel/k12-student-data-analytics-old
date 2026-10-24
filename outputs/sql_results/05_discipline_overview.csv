@@ -1,0 +1,6 @@
+grade,students,total_incidents,incidents_per_student,percent_with_incidents,total_major_incidents
+5,25,32.0,1.28,72.0,1.0
+6,22,27.0,1.23,77.3,4.0
+7,22,21.0,0.95,63.6,3.0
+8,40,64.0,1.6,72.5,5.0
+All grades,109,144.0,1.32,71.6,13.0

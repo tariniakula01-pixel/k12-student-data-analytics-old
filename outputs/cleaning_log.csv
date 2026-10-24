@@ -1,0 +1,38 @@
+step,table,student_id,field,original_value,new_value,rule,reason
+standardize values,students,S1025,Program,MTSS tier 2,MTSS Tier 2,fixed casing mapping,"The same program was written with two different casings, which splits one group into two in any summary."
+standardize values,assessments,S1029,Benchmark,met,Met,fixed casing mapping,"The same benchmark level was written with two different casings, which splits one group into two in any summary."
+define population,students,all rows,Enrollment_Status,117 students in source,110 students in analysis population,population filter,7 Withdrawn students are excluded from the analysis population. Their records cover a part year.
+drop columns,students,all rows,Last_Name and Full Name,present in source,removed from processed outputs,privacy and relevance,"The analysis never uses a student name, so name columns are not carried into any processed table."
+exclude rows,attendance,S1001,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,attendance,S1004,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,attendance,S1005,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,attendance,S1006,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,attendance,S1010,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,attendance,S1011,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,attendance,S9999,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,attendance,S1049,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,attendance,S1059,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,attendance,S1067,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,attendance,S1098,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1001,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1004,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,assessments,S1005,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,assessments,S1006,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1010,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1011,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,assessments,S8888,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,assessments,S1049,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1059,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1067,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,assessments,S1098,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1001,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1004,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,discipline,S1005,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,discipline,S1006,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1010,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1011,row,present,removed,row level exclusion,"Student_ID does not appear in the student table, so the record cannot be linked to a known student."
+exclude rows,discipline,S1049,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1059,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1067,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+exclude rows,discipline,S1098,row,present,removed,row level exclusion,Student is Withdrawn and sits outside the analysis population of Active students.
+derive fields,attendance,all rows,Attendance_Band and Is_Chronic_Absence,not present in source,derived from Attendance_Rate,documented project definitions,Bands make attendance groups easier to compare. The chronic absence flag uses the project definition of a rate below 90 percent.

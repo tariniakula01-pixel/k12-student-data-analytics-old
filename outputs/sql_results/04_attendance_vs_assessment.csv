@@ -1,0 +1,5 @@
+Attendance_Band,students,average_score,percent_met,overall_correlation
+At Risk,20,77.2,80.0,-0.06
+Needs Monitoring,15,81.27,73.3,-0.06
+On Track,28,81.07,78.6,-0.06
+Strong,42,76.6,71.4,-0.06

@@ -1,0 +1,6 @@
+kpi,pandas_value,duckdb_value,match
+Total Students,110.0,110.0,Yes
+Average Attendance Rate,91.84,91.84,Yes
+Average Score,78.48,78.48,Yes
+Percent Met Benchmark,75.7,75.7,Yes
+Chronic Absence Rate,33.3,33.3,Yes

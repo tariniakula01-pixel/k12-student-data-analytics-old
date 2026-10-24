@@ -1,0 +1,9 @@
+grouping,group_name,students,average_attendance_rate,chronic_absence_rate,average_days_absent,rank_in_group
+Grade,7,21,93.25,19.0,9.0,1
+Grade,6,22,91.85,36.4,9.9,2
+Grade,8,40,91.38,37.5,10.8,3
+Grade,5,25,91.36,36.0,10.6,4
+Program,Core,55,93.14,20.0,8.8,1
+Program,MTSS Tier 3,9,91.16,44.4,9.8,2
+Program,MTSS Tier 2,18,90.72,44.4,11.7,3
+Program,MTSS Tier 1,26,90.08,50.0,12.4,4

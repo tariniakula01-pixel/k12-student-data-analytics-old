@@ -1,0 +1,11 @@
+check_name,problem_rows
+Source attendance rows outside the analysis population,11
+Source assessment rows outside the analysis population,11
+Source discipline rows outside the analysis population,10
+Processed attendance rows with no matching student,0
+Processed assessment rows with no matching student,0
+Processed discipline rows with no matching student,0
+Processed attendance rows where present plus absent differs from enrolled,0
+Processed assessment rows breaking the rule Below means score under 70,0
+Source Program values written with inconsistent casing,1
+Source Benchmark values written with inconsistent casing,1

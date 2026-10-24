@@ -1,0 +1,23 @@
+dataset,column,data_type,missing_values,distinct_values,example_values
+students,Student_ID,str,0,117,S1000; S1001; S1002; S1003; S1006
+students,Last_Name,str,0,12,Wilson; Brown; Johnson; Anderson; Patel
+students,Enrollment_Status,str,0,2,Active; Withdrawn
+students,Program,str,0,5,MTSS Tier 2; MTSS Tier 1; Core; MTSS Tier 3; MTSS tier 2
+students,Enrollment_Date,str,0,62,2025-10-29 00:00:00; 2025-09-20 00:00:00; 2025-10-19 00:00:00; 2025-10-21 00:00:00; 2025-10-03 00:00:00
+students,Full Name,str,0,91,Olivia Wilson; Daniel Brown; Charlotte Johnson; Isabella Johnson; Ella Wilson
+attendance,Student_ID,str,0,119,S1000; S1001; S1002; S1003; S1004
+attendance,Grade,int64,0,4,8; 5; 7; 6
+attendance,Days_Enrolled,int64,0,70,93; 99; 145; 106; 163
+attendance,Days_Present,int64,0,75,81; 94; 141; 106; 143
+attendance,Days_Absent,int64,0,23,12; 5; 4; 0; 20
+attendance,Attendance_Rate,float64,0,85,87.1; 94.9; 97.2; 100.0; 87.7
+assessments,Student_ID,str,0,118,S1000; S1001; S1002; S1003; S1004
+assessments,Grade,int64,0,4,8; 5; 7; 6
+assessments,Assessment,str,0,3,Science; ELA; Math
+assessments,Assessment_Date,str,0,70,2026-02-23 00:00:00; 2026-01-29 00:00:00; 2026-02-04 00:00:00; 2026-03-02 00:00:00; 2026-03-28 00:00:00
+assessments,Score,int64,0,43,92; 85; 80; 86; 82
+assessments,Benchmark,str,0,3,Met; Below; met
+discipline,Student_ID,str,0,119,S1000; S1001; S1002; S1003; S1004
+discipline,Grade,int64,0,4,8; 5; 7; 6
+discipline,Incidents,int64,0,7,1; 0; 2; 3; 4
+discipline,Major_Incidents,int64,0,3,0; 1; 2

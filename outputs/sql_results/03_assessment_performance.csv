@@ -1,0 +1,8 @@
+grouping,group_name,students,average_score,percent_met,students_below,rank_in_group
+Grade,7,22,77.05,81.8,4.0,1
+Grade,8,38,79.11,78.9,8.0,2
+Grade,5,25,80.52,76.0,6.0,3
+Grade,6,22,76.5,63.6,8.0,4
+Subject,ELA,32,81.69,87.5,4.0,1
+Subject,Math,34,76.68,76.5,8.0,2
+Subject,Science,41,77.46,65.9,14.0,3

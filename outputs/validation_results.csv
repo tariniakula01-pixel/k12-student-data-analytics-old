@@ -1,0 +1,16 @@
+check,expected,actual,result
+Students in source table,117,117,Pass
+Students in analysis population,110,110,Pass
+Attendance rows after cleaning,108,108,Pass
+Assessment rows after cleaning,107,107,Pass
+Discipline rows after cleaning,109,109,Pass
+"Summary rows, one per student",110,110,Pass
+Fact rows with no matching student after cleaning,0,0,Pass
+Attendance rows where present plus absent differs from enrolled,0,0,Pass
+Attendance rows where present exceeds enrolled,0,0,Pass
+Assessment rows breaking the rule Below means score under 70,0,0,Pass
+Program values outside the standard list,0,0,Pass
+Benchmark values outside Met and Below,0,0,Pass
+Duplicated Student_ID in summary table,0,0,Pass
+Attendance rates outside 0 to 100,0,0,Pass
+Students in summary with no grade from any table,0,0,Pass
