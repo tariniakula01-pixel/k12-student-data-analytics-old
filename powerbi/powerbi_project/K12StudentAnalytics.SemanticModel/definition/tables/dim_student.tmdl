@@ -1,0 +1,37 @@
+table dim_student
+	lineageTag: ddcf3afe-1782-4fef-a261-a95c8855675e
+
+	column Student_ID
+		dataType: string
+		lineageTag: dca52d0e-fbe2-433a-88e5-b54e9ae15cc6
+		sourceColumn: Student_ID
+		summarizeBy: none
+
+	column Enrollment_Status
+		dataType: string
+		lineageTag: 4f0e843d-0a02-4ba6-8f6c-d13d65c99333
+		sourceColumn: Enrollment_Status
+		summarizeBy: none
+
+	column Program
+		dataType: string
+		lineageTag: 1c2e6db0-21d4-4bc0-a8eb-79c0720d6eb9
+		sourceColumn: Program
+		summarizeBy: none
+
+	column Enrollment_Date
+		dataType: dateTime
+		lineageTag: 76ab8ec4-b34c-4723-a214-8768bcb5108e
+		sourceColumn: Enrollment_Date
+		summarizeBy: none
+
+	partition dim_student = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("model\dim_student.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.None]),
+				Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true])
+			in
+				Headers
+
+	annotation PBI_ResultType = Table

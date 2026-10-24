@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "012e591a6f42427db1a2",
+  "position": {
+    "x": 440,
+    "y": 160,
+    "z": 5,
+    "height": 260,
+    "width": 400,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "dim_student"
+                  },
+                  "Property": "Program"
+                }
+              },
+              "queryRef": "dim_student.Program",
+              "nativeQueryRef": "Program"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Chronic Absence Rate"
+                }
+              },
+              "queryRef": "_Measures.Chronic Absence Rate",
+              "nativeQueryRef": "Chronic Absence Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Chronic absence rate by program'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

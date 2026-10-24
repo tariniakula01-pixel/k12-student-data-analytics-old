@@ -1,0 +1,37 @@
+table fact_discipline
+	lineageTag: e8d298d6-deb8-4715-857e-f17cafa61923
+
+	column Student_ID
+		dataType: string
+		lineageTag: 6cbd186e-8145-446f-976e-a34d1c8424ba
+		sourceColumn: Student_ID
+		summarizeBy: none
+
+	column Grade
+		dataType: int64
+		lineageTag: 99a66df2-c7de-4388-9683-169b069e3075
+		sourceColumn: Grade
+		summarizeBy: none
+
+	column Incidents
+		dataType: int64
+		lineageTag: d33bc959-c713-4b8c-b293-fb0489d1396e
+		sourceColumn: Incidents
+		summarizeBy: none
+
+	column Major_Incidents
+		dataType: int64
+		lineageTag: fc57a136-2f07-4ace-bb03-81be6c0e5f72
+		sourceColumn: Major_Incidents
+		summarizeBy: none
+
+	partition fact_discipline = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("model\fact_discipline.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.None]),
+				Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true])
+			in
+				Headers
+
+	annotation PBI_ResultType = Table

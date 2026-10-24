@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "ca12297f0bfb40ddb511",
+  "position": {
+    "x": 950,
+    "y": 20,
+    "z": 3,
+    "height": 110,
+    "width": 310,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Percent Met Benchmark"
+                }
+              },
+              "queryRef": "_Measures.Percent Met Benchmark",
+              "nativeQueryRef": "Percent Met Benchmark"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Percent Met Benchmark'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

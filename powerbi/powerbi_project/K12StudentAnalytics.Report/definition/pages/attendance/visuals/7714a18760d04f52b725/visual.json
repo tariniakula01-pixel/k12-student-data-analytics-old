@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "7714a18760d04f52b725",
+  "position": {
+    "x": 20,
+    "y": 160,
+    "z": 3,
+    "height": 260,
+    "width": 400,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "fact_attendance"
+                  },
+                  "Property": "Attendance_Band"
+                }
+              },
+              "queryRef": "fact_attendance.Attendance_Band",
+              "nativeQueryRef": "Attendance_Band"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Students With Attendance"
+                }
+              },
+              "queryRef": "_Measures.Students With Attendance",
+              "nativeQueryRef": "Students With Attendance"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Students by attendance band'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

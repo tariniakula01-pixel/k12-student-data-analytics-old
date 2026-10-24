@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "eefe480d138f4f919a60",
+  "position": {
+    "x": 20,
+    "y": 350,
+    "z": 3,
+    "height": 350,
+    "width": 820,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "dim_student"
+                  },
+                  "Property": "Program"
+                }
+              },
+              "queryRef": "dim_student.Program",
+              "nativeQueryRef": "Program"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Students With Assessment"
+                }
+              },
+              "queryRef": "_Measures.Students With Assessment",
+              "nativeQueryRef": "Students With Assessment"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Average Score"
+                }
+              },
+              "queryRef": "_Measures.Average Score",
+              "nativeQueryRef": "Average Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Percent Met Benchmark"
+                }
+              },
+              "queryRef": "_Measures.Percent Met Benchmark",
+              "nativeQueryRef": "Percent Met Benchmark"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Results by program'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

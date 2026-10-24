@@ -1,0 +1,49 @@
+table fact_assessment
+	lineageTag: 5aafad29-6f7e-407a-8145-e0f8785dc5cb
+
+	column Student_ID
+		dataType: string
+		lineageTag: 4c77fa26-abd1-462f-bd3f-9a0c858938e0
+		sourceColumn: Student_ID
+		summarizeBy: none
+
+	column Grade
+		dataType: int64
+		lineageTag: 311a85cb-65bc-4ad3-b1da-b7089d11d4fc
+		sourceColumn: Grade
+		summarizeBy: none
+
+	column Assessment
+		dataType: string
+		lineageTag: 71aa068d-9b16-4e16-80f3-b461121e2646
+		sourceColumn: Assessment
+		summarizeBy: none
+
+	column Assessment_Date
+		dataType: dateTime
+		lineageTag: 5248a9ec-6145-4dc7-84ea-a3e63f9ed019
+		sourceColumn: Assessment_Date
+		summarizeBy: none
+
+	column Score
+		dataType: int64
+		lineageTag: df6cc379-2789-408c-8b75-86b4ac068bc4
+		sourceColumn: Score
+		summarizeBy: none
+
+	column Benchmark
+		dataType: string
+		lineageTag: ad1f86df-f288-450a-be78-5b2813a48684
+		sourceColumn: Benchmark
+		summarizeBy: none
+
+	partition fact_assessment = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("model\fact_assessment.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.None]),
+				Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true])
+			in
+				Headers
+
+	annotation PBI_ResultType = Table

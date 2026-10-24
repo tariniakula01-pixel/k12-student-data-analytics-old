@@ -1,0 +1,19 @@
+relationship fact_attendance_to_dim_student
+	fromColumn: fact_attendance.Student_ID
+	toColumn: dim_student.Student_ID
+
+relationship fact_assessment_to_dim_student
+	fromColumn: fact_assessment.Student_ID
+	toColumn: dim_student.Student_ID
+
+relationship fact_discipline_to_dim_student
+	fromColumn: fact_discipline.Student_ID
+	toColumn: dim_student.Student_ID
+
+relationship fact_assessment_to_dim_date
+	fromColumn: fact_assessment.Assessment_Date
+	toColumn: dim_date.Date
+
+relationship dim_student_to_dim_date
+	fromColumn: dim_student.Enrollment_Date
+	toColumn: dim_date.Date

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "aa4366d6453b4f32af87",
+  "position": {
+    "x": 860,
+    "y": 350,
+    "z": 4,
+    "height": 350,
+    "width": 400,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "dim_student"
+                  },
+                  "Property": "Program"
+                }
+              },
+              "queryRef": "dim_student.Program",
+              "nativeQueryRef": "Program"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Program'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

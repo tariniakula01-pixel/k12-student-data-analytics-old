@@ -1,0 +1,13 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+
+	annotation PBI_QueryOrder = ["dim_student","dim_date","fact_attendance","fact_assessment","fact_discipline","_Measures"]
+
+ref table dim_student
+ref table dim_date
+ref table fact_attendance
+ref table fact_assessment
+ref table fact_discipline
+ref table _Measures

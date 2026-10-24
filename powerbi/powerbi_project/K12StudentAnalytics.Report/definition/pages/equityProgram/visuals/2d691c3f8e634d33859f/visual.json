@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "2d691c3f8e634d33859f",
+  "position": {
+    "x": 20,
+    "y": 350,
+    "z": 3,
+    "height": 350,
+    "width": 820,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "dim_student"
+                  },
+                  "Property": "Program"
+                }
+              },
+              "queryRef": "dim_student.Program",
+              "nativeQueryRef": "Program"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Total Students"
+                }
+              },
+              "queryRef": "_Measures.Total Students",
+              "nativeQueryRef": "Total Students"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Average Attendance Rate"
+                }
+              },
+              "queryRef": "_Measures.Average Attendance Rate",
+              "nativeQueryRef": "Average Attendance Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Percent Met Benchmark"
+                }
+              },
+              "queryRef": "_Measures.Percent Met Benchmark",
+              "nativeQueryRef": "Percent Met Benchmark"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Chronic Absence Rate"
+                }
+              },
+              "queryRef": "_Measures.Chronic Absence Rate",
+              "nativeQueryRef": "Chronic Absence Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Program summary'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

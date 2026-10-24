@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "3d52dd2a966a4863be30",
+  "position": {
+    "x": 860,
+    "y": 160,
+    "z": 5,
+    "height": 260,
+    "width": 400,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "fact_attendance"
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "queryRef": "fact_attendance.Grade",
+              "nativeQueryRef": "Grade"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Chronic Absence Rate"
+                }
+              },
+              "queryRef": "_Measures.Chronic Absence Rate",
+              "nativeQueryRef": "Chronic Absence Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Chronic absence rate by grade'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "a1677cff5130430a94bc",
+  "position": {
+    "x": 860,
+    "y": 20,
+    "z": 2,
+    "height": 300,
+    "width": 400,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "fact_discipline"
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "queryRef": "fact_discipline.Grade",
+              "nativeQueryRef": "Grade"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Average Incidents Per Student"
+                }
+              },
+              "queryRef": "_Measures.Average Incidents Per Student",
+              "nativeQueryRef": "Average Incidents Per Student"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Incidents per student by grade'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "fb6442c635ef476ea394",
+  "position": {
+    "x": 860,
+    "y": 20,
+    "z": 2,
+    "height": 300,
+    "width": 400,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "fact_assessment"
+                  },
+                  "Property": "Benchmark"
+                }
+              },
+              "queryRef": "fact_assessment.Benchmark",
+              "nativeQueryRef": "Benchmark"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Students With Assessment"
+                }
+              },
+              "queryRef": "_Measures.Students With Assessment",
+              "nativeQueryRef": "Students With Assessment"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Students by benchmark level'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

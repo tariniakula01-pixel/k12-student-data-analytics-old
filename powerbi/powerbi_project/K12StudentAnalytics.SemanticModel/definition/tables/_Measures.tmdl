@@ -1,0 +1,71 @@
+table _Measures
+	lineageTag: 11ac4a55-707b-4c05-993a-7b34b88d470f
+	isHidden
+
+	measure 'Total Students' = COUNTROWS ( dim_student )
+		formatString: #,0
+		lineageTag: 4b288a47-3771-423a-9013-4531a242a22c
+
+	measure 'Students With Attendance' = COUNTROWS ( fact_attendance )
+		formatString: #,0
+		lineageTag: d397f967-7ff6-495a-9bff-84094568ff0d
+
+	measure 'Students With Assessment' = COUNTROWS ( fact_assessment )
+		formatString: #,0
+		lineageTag: 938df5bd-f7a8-4784-a712-d01c93d7f0fe
+
+	measure 'Average Attendance Rate' = AVERAGE ( fact_attendance[Attendance_Rate] )
+		formatString: 0.00
+		lineageTag: 934a4caa-c968-438d-b460-53cb083ee178
+
+	measure 'Total Days Absent' = SUM ( fact_attendance[Days_Absent] )
+		formatString: #,0
+		lineageTag: cad39cec-9bd6-4e7b-8131-7130b7903c75
+
+	measure 'Chronic Absence Count' = CALCULATE ( COUNTROWS ( fact_attendance ), fact_attendance[Is_Chronic_Absence] = "Yes" )
+		formatString: #,0
+		lineageTag: c6db1933-3a38-4fe8-9133-a6553b71c26c
+
+	measure 'Chronic Absence Rate' = DIVIDE ( [Chronic Absence Count], [Students With Attendance] )
+		formatString: 0.0%
+		lineageTag: 842d8c14-8e2a-42a7-b3fd-9d75fe4406ce
+
+	measure 'Average Score' = AVERAGE ( fact_assessment[Score] )
+		formatString: 0.00
+		lineageTag: 204b4308-7dcd-489e-8d7f-be88c154b7fd
+
+	measure 'Students Met Benchmark' = CALCULATE ( COUNTROWS ( fact_assessment ), fact_assessment[Benchmark] = "Met" )
+		formatString: #,0
+		lineageTag: cbbd93f5-accd-4989-9260-d2c47b6c9f31
+
+	measure 'Students Below Benchmark' = CALCULATE ( COUNTROWS ( fact_assessment ), fact_assessment[Benchmark] = "Below" )
+		formatString: #,0
+		lineageTag: 3e1044d0-0654-4929-8245-e18511590546
+
+	measure 'Percent Met Benchmark' = DIVIDE ( [Students Met Benchmark], [Students With Assessment] )
+		formatString: 0.0%
+		lineageTag: 9c8062a9-5ede-4819-9e13-29da0fb640af
+
+	measure 'Total Incidents' = SUM ( fact_discipline[Incidents] )
+		formatString: #,0
+		lineageTag: fd433f18-b8a7-4110-8e3d-37b22ec69db1
+
+	measure 'Total Major Incidents' = SUM ( fact_discipline[Major_Incidents] )
+		formatString: #,0
+		lineageTag: 643c0d91-7063-4924-917b-0983d7e6c31f
+
+	measure 'Students With Incidents' = CALCULATE ( COUNTROWS ( fact_discipline ), fact_discipline[Incidents] > 0 )
+		formatString: #,0
+		lineageTag: 1af8965b-591c-4d66-8855-3cf6d33c242b
+
+	measure 'Average Incidents Per Student' = DIVIDE ( [Total Incidents], COUNTROWS ( fact_discipline ) )
+		formatString: 0.00
+		lineageTag: ced390b8-dc88-4960-8f6e-8ff27a9c0f9f
+
+	measure 'Average Score Previous Month' = CALCULATE ( [Average Score], DATEADD ( dim_date[Date], -1, MONTH ) )
+		formatString: 0.00
+		lineageTag: 0d68a213-91e3-44af-a202-c8554004d234
+
+	measure 'Average Score Month Change' = [Average Score] - [Average Score Previous Month]
+		formatString: 0.00
+		lineageTag: b55dd92e-1baa-4b83-a9d4-6099f6cae344

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>K12 Student Analytics: Report Preview</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; background: #F3F4F6; color: #1F2937; }
+  header { background: #16324F; color: #FFFFFF; padding: 28px 40px; }
+  header h1 { margin: 0 0 6px 0; font-size: 26px; }
+  header p { margin: 0; color: #D7DEE8; max-width: 900px; }
+  nav { background: #FFFFFF; border-bottom: 1px solid #D1D5DB; padding: 10px 40px; }
+  nav a { color: #16324F; margin-right: 22px; text-decoration: none; font-weight: 600; }
+  main { max-width: 1120px; margin: 0 auto; padding: 24px 24px 48px 24px; }
+  section { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 24px 28px; margin-bottom: 24px; }
+  h2 { color: #16324F; margin-top: 0; }
+  .cards { display: flex; flex-wrap: wrap; gap: 16px; }
+  .card { flex: 1 1 200px; border: 1px solid #E5E7EB; border-top: 4px solid #D9A441; border-radius: 6px; padding: 16px; }
+  .card .value { font-size: 30px; font-weight: 700; color: #16324F; }
+  .card .label { color: #6B7280; font-size: 13px; margin-top: 4px; }
+  .charts { display: flex; flex-wrap: wrap; gap: 20px; }
+  .chart { flex: 1 1 320px; }
+  .chart img { width: 100%; border: 1px solid #E5E7EB; border-radius: 6px; }
+  .chart p { color: #6B7280; font-size: 13px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+  th, td { border: 1px solid #E5E7EB; padding: 8px 10px; text-align: left; font-size: 14px; }
+  th { background: #16324F; color: #FFFFFF; }
+  .insight { background: #F8FAFC; border-left: 4px solid #16324F; padding: 12px 16px; margin: 14px 0; }
+  .small { color: #6B7280; font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>K12 Student Analytics</h1>
+  <p>Interactive preview of the Power BI report design, built from the same model outputs, for reviewers without Power BI Desktop. All values come from the analysis population of 110 Active students in one school, grades 5 to 8, in the 2025 to 2026 school year. The data is simulated practice data.</p>
+</header>
+<nav>
+  <a href="#executive">Executive Summary</a>
+  <a href="#performance">Student Performance</a>
+  <a href="#attendance">Attendance</a>
+  <a href="#program">Equity and Program</a>
+</nav>
+<main>
+
+<section id="executive">
+  <h2>Page 1: Executive Summary</h2>
+  <div class="cards">
+    <div class="card"><div class="value">110</div><div class="label">Total students in the analysis population</div></div>
+    <div class="card"><div class="value">91.84</div><div class="label">Average attendance rate in percent, across 108 students</div></div>
+    <div class="card"><div class="value">78.48</div><div class="label">Average assessment score, across 107 students</div></div>
+    <div class="card"><div class="value">75.7%</div><div class="label">Assessed students recorded as Met, 81 of 107</div></div>
+  </div>
+  <div class="insight">
+    One third of students with attendance records, 36 of 108, sit below the 90 percent attendance line that this project uses for its chronic absence group. At the same time, attendance and scores barely move together in this data. The correlation between attendance rate and score is −0.06, and the strongest attendance band does not hold the highest average score.
+  </div>
+  <div class="charts">
+    <div class="chart">
+      <img src="../assets/charts/attendance_by_grade.png" alt="Average attendance rate by grade">
+      <p>Grade 7 records the highest average attendance at 93.25 percent. The other grades sit between 91.36 and 91.85.</p>
+    </div>
+    <div class="chart">
+      <img src="../assets/charts/percent_met_by_grade.png" alt="Share of students recorded as Met by grade">
+      <p>Grade 6 records the lowest share at Met with 63.6 percent, against 81.8 percent in grade 7.</p>
+    </div>
+    <div class="chart">
+      <img src="../assets/charts/score_by_month.png" alt="Average score by assessment month">
+      <p>Average scores stay in a narrow range across the January to April testing window. Each student appears once, so this describes the window rather than growth.</p>
+    </div>
+  </div>
+</section>
+
+<section id="performance">
+  <h2>Page 2: Student Performance</h2>
+  <div class="charts">
+    <div class="chart">
+      <img src="../assets/charts/score_distribution.png" alt="Distribution of assessment scores">
+      <p>Scores run from 43 to 100 with a median of 78. A quarter of assessed students score at or below the benchmark line of 70.</p>
+    </div>
+    <div class="chart">
+      <img src="../assets/charts/percent_met_by_subject.png" alt="Share of students recorded as Met by subject">
+      <p>ELA records 87.5 percent at Met, Math 76.5 percent, and Science 65.9 percent. Each student took one assessment in one subject, so these rows compare different groups of students.</p>
+    </div>
+  </div>
+  <div class="insight">
+    Twenty six students are recorded as Below, with scores from 43 to 69. Twenty one of the twenty six scored between 60 and 69, close to the benchmark line, so the Below group is mostly made of students within ten points of Met.
+  </div>
+</section>
+
+<section id="attendance">
+  <h2>Page 3: Attendance</h2>
+  <div class="cards">
+    <div class="card"><div class="value">36</div><div class="label">Students in the chronic absence group, rate below 90 percent</div></div>
+    <div class="card"><div class="value">33.3%</div><div class="label">Share of students with attendance records in that group</div></div>
+    <div class="card"><div class="value">21</div><div class="label">Students below 85 percent attendance</div></div>
+    <div class="card"><div class="value">1105</div><div class="label">Total days absent across 108 students</div></div>
+  </div>
+  <div class="charts">
+    <div class="chart">
+      <img src="../assets/charts/attendance_distribution.png" alt="Distribution of attendance rates">
+      <p>Most students cluster above 90 percent, with a smaller group spread down to 75 percent.</p>
+    </div>
+    <div class="chart">
+      <img src="../assets/charts/score_by_band.png" alt="Average score by attendance band">
+      <p>Average score does not climb with attendance band in this data. The Strong band averages 76.60 while Needs Monitoring averages 81.27.</p>
+    </div>
+  </div>
+  <p class="small">The bands and the chronic absence line are project definitions written for this analysis. They are not official school or district thresholds.</p>
+</section>
+
+<section id="program">
+  <h2>Page 4: Equity and Program</h2>
+  <table>
+    <tr><th>Program</th><th>Students</th><th>Average attendance rate</th><th>Chronic absence rate</th><th>Average score</th><th>Percent Met</th></tr>
+    <tr><td>Core</td><td>55</td><td>93.14</td><td>20.0%</td><td>78.96</td><td>76.4%</td></tr>
+    <tr><td>MTSS Tier 1</td><td>28</td><td>90.08</td><td>50.0%</td><td>74.93</td><td>60.7%</td></tr>
+    <tr><td>MTSS Tier 2</td><td>18</td><td>90.72</td><td>44.4%</td><td>80.06</td><td>83.3%</td></tr>
+    <tr><td>MTSS Tier 3</td><td>9</td><td>91.16</td><td>44.4%</td><td>83.67</td><td>77.8%</td></tr>
+  </table>
+  <div class="insight">
+    MTSS Tier 1 students record the lowest average attendance and the lowest share at Met, even though Tier 1 is the lightest support tier. MTSS Tier 3 holds only nine students, so its higher averages should be read as a small group result rather than a firm pattern.
+  </div>
+  <div class="charts">
+    <div class="chart">
+      <img src="../assets/charts/incidents_by_grade.png" alt="Average discipline incidents per student by grade">
+      <p>Grade 8 records 1.60 incidents per student, the highest rate. Grade 8 is also the largest grade, so the per student rate is the fair comparison.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

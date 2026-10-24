@@ -1,0 +1,61 @@
+table fact_attendance
+	lineageTag: a288e300-523a-425b-98a7-719a1cb0d94f
+
+	column Student_ID
+		dataType: string
+		lineageTag: 80dcc255-0865-480b-810f-bc296e27e3d9
+		sourceColumn: Student_ID
+		summarizeBy: none
+
+	column Grade
+		dataType: int64
+		lineageTag: ae329936-9dc8-4e06-982d-b2a348824ffa
+		sourceColumn: Grade
+		summarizeBy: none
+
+	column Days_Enrolled
+		dataType: int64
+		lineageTag: e1724856-9abe-4a87-82cf-014387e55a0b
+		sourceColumn: Days_Enrolled
+		summarizeBy: none
+
+	column Days_Present
+		dataType: int64
+		lineageTag: b881658a-7b3d-4510-950a-a28a4279671b
+		sourceColumn: Days_Present
+		summarizeBy: none
+
+	column Days_Absent
+		dataType: int64
+		lineageTag: 84ce3fef-9508-4d97-abde-f9df05dec916
+		sourceColumn: Days_Absent
+		summarizeBy: none
+
+	column Attendance_Rate
+		dataType: double
+		lineageTag: d33184cb-a012-4aad-8aa1-13debf595ef9
+		sourceColumn: Attendance_Rate
+		summarizeBy: none
+
+	column Attendance_Band
+		dataType: string
+		lineageTag: b90fb94b-aa6e-4d37-afb3-608ea7a533e1
+		sourceColumn: Attendance_Band
+		summarizeBy: none
+
+	column Is_Chronic_Absence
+		dataType: string
+		lineageTag: f2519646-dd73-47fa-9d7b-766c5898ea14
+		sourceColumn: Is_Chronic_Absence
+		summarizeBy: none
+
+	partition fact_attendance = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("model\fact_attendance.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.None]),
+				Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true])
+			in
+				Headers
+
+	annotation PBI_ResultType = Table

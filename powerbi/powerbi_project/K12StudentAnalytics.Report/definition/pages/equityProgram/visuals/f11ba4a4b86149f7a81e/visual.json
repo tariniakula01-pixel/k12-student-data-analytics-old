@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "f11ba4a4b86149f7a81e",
+  "position": {
+    "x": 860,
+    "y": 350,
+    "z": 4,
+    "height": 350,
+    "width": 400,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "fact_assessment"
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "queryRef": "fact_assessment.Grade",
+              "nativeQueryRef": "Grade"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Grade'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

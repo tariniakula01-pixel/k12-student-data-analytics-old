@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "87a466f94fea4d2299a7",
+  "position": {
+    "x": 440,
+    "y": 20,
+    "z": 1,
+    "height": 110,
+    "width": 400,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Chronic Absence Rate"
+                }
+              },
+              "queryRef": "_Measures.Chronic Absence Rate",
+              "nativeQueryRef": "Chronic Absence Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Chronic Absence Rate'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

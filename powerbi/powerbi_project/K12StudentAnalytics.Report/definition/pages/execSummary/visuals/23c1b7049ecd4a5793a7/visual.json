@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "23c1b7049ecd4a5793a7",
+  "position": {
+    "x": 20,
+    "y": 160,
+    "z": 4,
+    "height": 260,
+    "width": 400,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "SourceRef": {
+                    "Entity": "fact_attendance"
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "queryRef": "fact_attendance.Grade",
+              "nativeQueryRef": "Grade"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  },
+                  "Property": "Average Attendance Rate"
+                }
+              },
+              "queryRef": "_Measures.Average Attendance Rate",
+              "nativeQueryRef": "Average Attendance Rate"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Average attendance rate by grade'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

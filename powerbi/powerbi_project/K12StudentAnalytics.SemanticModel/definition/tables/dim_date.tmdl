@@ -1,0 +1,49 @@
+table dim_date
+	lineageTag: 832b8dd9-e22f-489c-83ba-da81b9082efb
+
+	column Date
+		dataType: dateTime
+		lineageTag: 01eec9e7-2f0b-4696-8637-9f16cfdf8a26
+		sourceColumn: Date
+		summarizeBy: none
+
+	column Year
+		dataType: int64
+		lineageTag: 6c4b70c7-e8b8-4ea4-a501-f6f354e51f97
+		sourceColumn: Year
+		summarizeBy: none
+
+	column Month
+		dataType: int64
+		lineageTag: 8e4f2685-66e5-45a8-a185-3e68edb63593
+		sourceColumn: Month
+		summarizeBy: none
+
+	column MonthName
+		dataType: string
+		lineageTag: ef7aa2bb-93e3-418e-829d-523f0c04fefe
+		sourceColumn: MonthName
+		summarizeBy: none
+
+	column YearMonth
+		dataType: string
+		lineageTag: 63035d27-88fb-46bd-ae86-70489c8f4eac
+		sourceColumn: YearMonth
+		summarizeBy: none
+
+	column MonthLabel
+		dataType: string
+		lineageTag: 15391298-8b62-4c6e-bd9e-b346c2734894
+		sourceColumn: MonthLabel
+		summarizeBy: none
+
+	partition dim_date = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("model\dim_date.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.None]),
+				Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true])
+			in
+				Headers
+
+	annotation PBI_ResultType = Table
