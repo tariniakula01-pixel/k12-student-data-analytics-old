@@ -1,4 +1,4 @@
-# K12 Student Data Analytics
+# K-12 Student Data Analytics
 
 A data analytics project that turns four school data extracts into one consistent set of reports. The project covers data profiling, documented cleaning, validation, SQL analysis, Python analysis, an Excel reporting workbook, and a Power BI report with a documented data model and DAX measures.
 
